@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import styles from './App.module.css'
 
 const App = () => {
   const [previousPrice, setPreviousPrice] = useState('')
@@ -17,19 +18,19 @@ const App = () => {
   }
   return (
     <div>
-      <h3>stock profit and loss calculator</h3>
-      <form onSubmit={calculateResult}>
+      <h3 className={styles.heading}>stock profit and loss calculator</h3>
+      <form className={styles.form_div} onSubmit={calculateResult}>
         <label htmlFor='previousprice-input'>initial price</label>
-        <input type='number' name='previousprice-input' value={previousPrice} onChange={(e) => setPreviousPrice(e.target.value)} /><br />
+        <input className={styles.form_input} required type='number' name='previousprice-input' value={previousPrice} onChange={(e) => setPreviousPrice(e.target.value)} /><br />
         <label htmlFor='quantity-input'>quantity</label>
-        <input type='number' name='quantity-input' value={quantity} onChange={(e) => setQuantity(e.target.value)} /><br />
+        <input className={styles.form_input} required type='number' name='quantity-input' value={quantity} onChange={(e) => setQuantity(e.target.value)} /><br />
         <label htmlFor='currentprice-input'>current price</label>
-        <input type='number' name='currentprice-input' value={currentPrice} onChange={(e) => setCurrentPrice(e.target.value)} /><br />
+        <input className={styles.form_input} required type='number' name='currentprice-input' value={currentPrice} onChange={(e) => setCurrentPrice(e.target.value)} /><br />
         <input type='submit' value='tell me!' />
       </form>
-      {
+      <div className={styles.verdict}>{
         message && `${message}`
-      }
+      }</div>
     </div>
   );
 }
