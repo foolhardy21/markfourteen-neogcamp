@@ -13,8 +13,8 @@ const App = () => {
     const b = Number(quantity)
     const c = Number(currentPrice)
     const result = b * (c - a)
-    result < 0 ? setMessage(`Hey, the loss is ${Math.abs(result)} and the percent is ${(Math.abs(result)/a)*100}%`)
-      : setMessage(`Hey, the profit is ${result} and the percent is ${(result/a)*100}%`)
+    result < 0 ? setMessage(`Hey, the loss is ${Math.abs(result)} and the percent is ${Math.round(Math.abs(result)/a)*100}%`)
+      : setMessage(`Hey, the profit is ${result} and the percent is ${Math.round(result/a)*100}%`)
   }
   return (
     <div>
