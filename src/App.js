@@ -7,7 +7,7 @@ const App = () => {
   const [currentPrice, setCurrentPrice] = useState('')
   const [message, setMessage] = useState('')
 
-  function calculateResult(e) {
+  const calculateResult = e => {
     e.preventDefault()
     const a = Number(previousPrice)
     const b = Number(quantity)
